@@ -18,6 +18,10 @@ def transcribe_audio_chunks(chunks):
     os.remove("temp_chunk.mp3")
     return transcript_text
 
+@app.get('/')
+def index():
+    return "API working"
+
 @app.route('/transcribe', methods=['GET'])
 def transcribe_youtube_video():
     url = request.args.get('url')
